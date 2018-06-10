@@ -1,0 +1,18 @@
+version: "3"
+services:
+
+  #container for connecting to localhost
+  dockerhost:
+    container_name: dockerhost
+    image: qoomon/docker-host
+    cap_add: [ 'NET_ADMIN', 'NET_RAW' ]
+
+
+  apache:
+    container_name: apache
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 80:80
+      - 443:443
