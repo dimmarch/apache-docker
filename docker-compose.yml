@@ -6,6 +6,7 @@ services:
     container_name: dockerhost
     image: qoomon/docker-host
     cap_add: [ 'NET_ADMIN', 'NET_RAW' ]
+    restart: always
 
 
   apache:
@@ -16,3 +17,4 @@ services:
     ports:
       - 80:80
       - 443:443
+    restart: always
