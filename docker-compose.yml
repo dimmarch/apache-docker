@@ -7,7 +7,7 @@ services:
     image: qoomon/docker-host
     cap_add: [ 'NET_ADMIN', 'NET_RAW' ]
     restart: always
-
+    network_mode: bridge
 
   apache:
     container_name: apache
@@ -20,3 +20,4 @@ services:
       - 80:80
       - 443:443
     restart: always
+    network_mode: bridge
